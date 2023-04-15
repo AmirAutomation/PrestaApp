@@ -10,7 +10,6 @@
 *.mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.nar
 *.ear
@@ -44,8 +43,6 @@
 *gradle-app.setting
 
 # Not ignoring Gradle wrapper jar file (.jar files are usually ignored)
-*!/gradle/wrapper/gradle-wrapper.jar
-!*/gradle/wrapper/gradle-wrapper.jar
 
 # Cache of project
 *.gradletasknamecache

@@ -30,3 +30,6 @@ jobs:
 
       - name: Start Appium
         run: appium &
+
+      - name: Run Test
+        run: ./gradlew test

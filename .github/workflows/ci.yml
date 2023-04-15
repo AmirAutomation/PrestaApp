@@ -23,4 +23,6 @@ jobs:
         with:
           gradle-version: 8.1
       - name: Build app
+        with:
+          gradle-version: 8.1
         run: ./gradlew assemble

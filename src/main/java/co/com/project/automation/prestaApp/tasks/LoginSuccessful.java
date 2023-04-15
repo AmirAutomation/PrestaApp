@@ -27,6 +27,7 @@ public class LoginSuccessful implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        System.out.println("Teset Login");
         actor.attemptsTo(
                 Click.on(EMAIL),
                 SendKeys.of(data.get(1).get(0)).into(EMAIL),

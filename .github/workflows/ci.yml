@@ -31,5 +31,8 @@ jobs:
       - name: Start Appium
         run: appium &
 
+      - name: Install Xlsx
+        run: npm install xlsx
+
       - name: Run Test
         run: ./gradlew test

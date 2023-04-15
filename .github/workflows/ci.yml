@@ -25,4 +25,4 @@ jobs:
       - name: Build app
         with:
           gradle-version: 8.1
-        run: ./gradlew assemble
+          arguments: assemble

@@ -13,7 +13,7 @@ import java.io.IOException;
 
 @CucumberOptions(features = "src/test/resources/features/PrestaApp.feature",
         glue = "co.com.project.automation.prestaApp.stepdefinitions",
-        tags = "@Regression",
+        tags = "@T001",
         snippets = CucumberOptions.SnippetType.CAMELCASE)
 @RunWith(RunnerPersonalizado.class)
 public class Run {

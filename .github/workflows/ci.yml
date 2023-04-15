@@ -34,6 +34,12 @@ jobs:
       - name: Install Xlsx
         run: npm install xlsx
 
+      - name: Install appium doctor
+        run: npm install -g appium-doctor
+
+      - name: Requisitos
+        run: appium-doctor --android
+
       - name: Run Test
         run: ./gradlew :test --tests "co.com.project.automation.prestaApp.runners.Run"
 

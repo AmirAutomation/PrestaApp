@@ -25,13 +25,8 @@ jobs:
       - name: Run build with Gradle Wrapper
         run: ./gradlew assemble
 
-      - name: Setup node
-          uses: actions/setup-node@v3
-          with:
-            node-version: 16
-
       - name: Install Appium
-          run: npm install -g appium
+        run: npm install -g appium
 
       - name: Start Appium
-          run: appium &
+        run: appium &

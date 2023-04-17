@@ -29,7 +29,7 @@ jobs:
         run: npm install -g appium && appium &
 
       - name: Start Emulator
-        uses: android-actions/start-emulator@v2
+        uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 30
           arch: x86_64

@@ -21,18 +21,18 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
-
-      - name: Install Appium
-        run: npm install -g appium
-
-      - name: Start Appium
-        run: appium &
-
       - name: Setup Android SDK
         uses: amyu/setup-android@v2
         with:
           sdk-version: '30' # La versión del SDK de Android que deseas instalar
 
+      - name: Install Appium
+        run: npm install -g appium
+
+
+      - name: Start Appium
+        run: appium &
+
       - name: Run Test
         run: |
-          ./gradlew build connectedCheck
+          ./gradlew :test --tests "co.com.project.automation.prestaApp.runners.Run"

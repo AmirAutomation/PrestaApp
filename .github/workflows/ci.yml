@@ -32,7 +32,6 @@ jobs:
         uses: amyu/setup-android@v2
         with:
           sdk-version: '30' # La versión del SDK de Android que deseas instalar
-          emulator-version: '12'
 
       - name: Run Test
         run: |

@@ -26,7 +26,7 @@ jobs:
         run: ./gradlew assemble
 
       - name: Install Appium
-        run: npm install -g appium &
+        run: npm install -g appium
 
       - name: Start Appium
         run: appium &

@@ -28,15 +28,8 @@ jobs:
       - name: Install Appium
         run: npm install -g appium && appium &
 
-      - name: Set up Android emulator
-        uses: android-actions/start-emulator@v1
-        with:
-          api-level: 30
-          arch: x86_64
-          profile: Pixel_3a_API_30
-
-      - name: Start emulator
-        uses: android-actions/start-emulator@v1
+      - name: Setup Android SDK
+        uses: amyu/setup-android@v2
 
       - name: Install Xlsx
         run: npm install xlsx

@@ -38,11 +38,11 @@ jobs:
         run: npm install -g appium-doctor
 
       - name: run tests
-          uses: reactivecircus/android-emulator-runner@v2
-          with:
-            api-level: 29
-            profile: Nexus 6
-            script: ./gradlew connectedCheck
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          profile: Nexus 6
+          script: ./gradlew connectedCheck
 
       - name: Requisitos
         run: appium-doctor --android

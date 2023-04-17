@@ -26,7 +26,14 @@ jobs:
         run: ./gradlew assemble
 
       - name: Install Appium
-        run: npm install -g appium && appium &>/dev/null &
+        run: npm install -g appium && appium &
+
+      - name: Start Emulator
+        uses: android-actions/start-emulator@v2
+        with:
+          api-level: 30
+          arch: x86_64
+          profile: Nexus_5X_API_30
 
       - name: Install Xlsx
         run: npm install xlsx

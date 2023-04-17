@@ -29,7 +29,7 @@ jobs:
         run: npm install -g appium && appium &
 
       - name: Set up Android emulator
-        uses: android-actions/setup-emulator@v1
+        uses: android-actions/start-emulator@v1
         with:
           api-level: 30
           arch: x86_64

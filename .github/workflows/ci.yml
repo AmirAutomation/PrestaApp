@@ -32,8 +32,7 @@ jobs:
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 30
-          arch: x86_64
-          profile: Nexus_5X_API_30
+          profile: Nexus 6
           script: ./gradlew connectedCheck
       - name: Install Xlsx
         run: npm install xlsx

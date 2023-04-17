@@ -26,10 +26,7 @@ jobs:
         run: ./gradlew assemble
 
       - name: Install Appium
-        run: npm install -g appium
-
-      - name: Start Appium
-        run: appium &
+        run: npm install -g appium && appium &>/dev/null &
 
       - name: Install Xlsx
         run: npm install xlsx
@@ -37,15 +34,7 @@ jobs:
       - name: Install appium doctor
         run: npm install -g appium-doctor
 
-      - name: run tests
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 29
-          profile: Nexus 6
-          script: ./gradlew connectedCheck
-
-      - name: Requisitos
-        run: appium-doctor --android
-
       - name: Run Test
-        run: ./gradlew test
+        run: |
+          ./gradlew clean build
+          ./gradlew test

@@ -11,8 +11,7 @@ import java.io.IOException;
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(features = "src/test/resources/features/PrestaApp.feature",
         glue = "co.com.project.automation.prestaApp.stepdefinitions",
-        tags = "@T001",
-        snippets = CucumberOptions.SnippetType.CAMELCASE)
+        tags = "@Regression")
 
 public class Run {
     @BeforeSuite

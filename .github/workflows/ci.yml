@@ -27,14 +27,13 @@ jobs:
 
       - name: Install Appium
         run: npm install -g appium && appium &>/dev/null &
+        background: true
 
       - name: Install Xlsx
         run: npm install xlsx
 
-      - name: Install appium doctor
-        run: npm install -g appium-doctor
 
       - name: Run Test
         run: |
-          ./gradlew clean build
-          ./gradlew test
+          ./gradlew clean
+          ./gradlew :test --tests "co.com.project.automation.prestaApp.runners.Run"

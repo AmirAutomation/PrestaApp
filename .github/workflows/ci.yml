@@ -35,5 +35,4 @@ jobs:
 
       - name: Run Test
         run: |
-          ./gradlew clean
-          ./gradlew :test --tests "co.com.project.automation.prestaApp.runners.Run"
+          ./gradlew build connectedCheck

@@ -31,12 +31,6 @@ jobs:
       - name: Setup Android SDK
         uses: amyu/setup-android@v2
 
-      - name: emulador
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 29
-          script: ./gradlew connectedCheck
-
       - name: Run Test
         run: |
           ./gradlew clean

@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(features = "src/test/resources/features/PrestaApp.feature",
-        tags = "@Regression",
+        tags = "@T001",
         glue = "co.com.project.automation.prestaApp.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )

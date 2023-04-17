@@ -28,11 +28,11 @@ targetCompatibility = 19
 
 ext {
     slf4jVersion = '1.7.7'
-    serenityCoreVersion = '3.3.10'
-    serenityCucumberVersion = '3.3.10'
-    junitVersion = '4.13.1'
-    assertJVersion = '3.23.1'
-    logbackVersion = '1.2.10'
+    serenityCoreVersion = '3.6.12'
+    serenityCucumberVersion = '3.6.12'
+    junitVersion = '4.13.2'
+    assertJVersion = '3.24.2'
+    logbackVersion = '1.4.6'
 }
 
 dependencies {
@@ -44,13 +44,13 @@ dependencies {
             //"net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}",
             "junit:junit:${junitVersion}",
-            "org.junit.platform:junit-platform-launcher:1.8.2",
-            "org.junit.jupiter:junit-jupiter-engine:5.8.2",
-            "org.junit.vintage:junit-vintage-engine:5.8.2",
+            'org.junit.platform:junit-platform-launcher:1.9.2',
+            'org.junit.jupiter:junit-jupiter-engine:5.9.2',
+            'org.junit.vintage:junit-vintage-engine:5.9.2',
             "org.assertj:assertj-core:${assertJVersion}"
-    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-webdriver', version: '3.6.7'
-    implementation group: 'org.apache.poi', name: 'poi', version: '4.1.2'
-    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '4.1.2'
+    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-webdriver', version: '3.6.12'
+    implementation group: 'org.apache.poi', name: 'poi', version: '5.2.2'
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '5.2.2'
 }
 
 test {

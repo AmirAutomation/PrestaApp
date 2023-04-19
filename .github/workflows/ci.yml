@@ -23,11 +23,18 @@ jobs:
 
       - name: Start Appium
         run: appium &>/dev/null &
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+
+      - name: Setup Android SDK
+        uses: amyu/setup-android@v2
+        with:
+          sdk-version: '29' # La versión del SDK de Android que deseas instalar
 
       - name: Run Appium Tests
         uses: reactivecircus/android-emulator-runner@v1 # install and create the Emulator
         with:
-          api-level: 29
+          api-level: 30
           target: default
           arch: x86_64
           profile: Nexus 6

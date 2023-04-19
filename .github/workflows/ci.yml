@@ -5,7 +5,8 @@ on:
     branches: [ "CI/CD" ]
   pull_request:
     branches: [ "CI/CD" ]
-
+env:
+  PORT: 5554
 jobs:
   run-mobile-tests:
     runs-on: macos-latest
@@ -16,6 +17,11 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '11'
+
+      - name: Instalar dependencias
+        run: npm install
+      - name: Ejecutar aplicación
+        run: npm start --port $PORT
 
       - name: pull the project in to the runner
         uses: actions/checkout@v3

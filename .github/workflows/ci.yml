@@ -7,11 +7,28 @@ on:
     branches: [ "CI/CD" ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    name: Appium Test
+  run-mobile-tests:
+    runs-on: macos-latest
+
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install and Run Appium Server
-        uses: moatazeldebsy/appium-server-gitHub-action@V1.0.4
+      - name: Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '19'
+          distribution: 'temurin'
+
+      - name: pull Project
+        uses: actions/checkout@v3
+
+      - name: Setup Appium
+        run: |
+          npm install -g appium
+          appium -v
+          appium &>/dev/null &
+          
+      - name: run appium android tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          script: ./gradlew :test --tests "co.com.project.automation.prestaApp.runners.Run"

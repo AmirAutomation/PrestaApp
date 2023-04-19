@@ -31,7 +31,7 @@ jobs:
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 30
-          emulator-build: 7425822
+          emulator-build: 9751036
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: true
           script: ./gradlew :test --tests "co.com.project.automation.prestaApp.runners.Run"

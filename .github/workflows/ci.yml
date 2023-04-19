@@ -29,7 +29,7 @@ jobs:
       - name: Setup Android SDK
         uses: amyu/setup-android@v2
         with:
-          sdk-version: '29' # La versión del SDK de Android que deseas instalar
+          sdk-version: '30' # La versión del SDK de Android que deseas instalar
 
       - name: Run Appium Tests
         uses: reactivecircus/android-emulator-runner@v1 # install and create the Emulator

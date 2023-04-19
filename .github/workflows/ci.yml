@@ -17,13 +17,15 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '11'
+      - name: Install nd
+        run: npm install -g appium
 
-      - name: Ejecutar aplicación
-        run: npm start --port $PORT
+
 
       - name: pull the project in to the runner
         uses: actions/checkout@v3
-
+      - name: Ejecutar aplicación
+        run: npm start --port $PORT
       - name: setup appium
         run: |
           npm install -g appium@v1.22

@@ -7,7 +7,7 @@ on:
     branches: [ "CI/CD" ]
 
 jobs:
-  Sauce Labs App Automate:
+  build:
     runs-on: ubuntu-latest
     name: Appium Test
     steps:

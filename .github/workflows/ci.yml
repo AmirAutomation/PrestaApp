@@ -17,24 +17,18 @@ jobs:
         with:
           java-version: '19'
           distribution: 'temurin'
-          cache: gradle
-
-      - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
-      - name: Setup Android SDK
-        uses: amyu/setup-android@v2
-        with:
-          sdk-version: '30' # La versión del SDK de Android que deseas instalar
 
       - name: Install Appium
         run: npm install -g appium
 
-      - name: Driver
-        run:  npm appium driver install uiautomator2
-
       - name: Start Appium
-        run: appium &
+        run: appium &>/dev/null &
 
-      - name: Run Test
-        run: |
-          ./gradlew :test --tests "co.com.project.automation.prestaApp.runners.Run"
+      - name: Run Appium Tests
+        uses: reactivecircus/android-emulator-runner@v1 # install and create the Emulator
+        with:
+          api-level: 29
+          target: default
+          arch: x86_64
+          profile: Nexus 6
+          script: ./gradlew test

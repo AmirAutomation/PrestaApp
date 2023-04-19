@@ -18,8 +18,6 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
 
-      - name: Instalar dependencias
-        run: npm install
       - name: Ejecutar aplicación
         run: npm start --port $PORT
 

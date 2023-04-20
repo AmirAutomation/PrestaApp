@@ -25,6 +25,9 @@ jobs:
 
       - name: Start Appium
         run: appium &>/dev/null &
-
+      - name: Setup Android SDK
+        uses: amyu/setup-android@v2
+        with:
+          sdk-version: '31' # La versión del SDK de Android que deseas instalar
       - name: Run Test
         run: ./gradlew :test --tests "co.com.project.automation.prestaApp.runners.Run"

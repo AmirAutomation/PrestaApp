@@ -20,9 +20,6 @@ jobs:
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
 
-      - name: Run build with Gradle Wrapper
-        run: ./gradlew assemble
-
       - name: Install Appium
         run: npm install -g appium
 

@@ -22,8 +22,5 @@ jobs:
       - name: Check Appium Doctor
         run: appium-doctor
 
-      - name: Build and Test with Gradle
-        run: ./gradlew build
-
       - name: Run Appium Test
         run: ./gradlew clean test --tests "co.com.project.automation.prestaApp.runners.Run"

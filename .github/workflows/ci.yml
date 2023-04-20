@@ -5,32 +5,25 @@ on:
     branches: [ "CI/CD" ]
   pull_request:
     branches: [ "CI/CD" ]
-env:
-  PORT: 5554
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2.3.4
 
-      - name: Setup Java
-        uses: actions/setup-java@v1
-        with:
-          java-version: 11
+      - name: Install Appium Dependencies
+        run: |
+          sudo npm install -g appium
+          sudo npm install -g appium-doctor
 
-      - name: Install Android SDK
-        uses: android-actions/setup-android@v2
-        with:
-          sdk-version: 30
-      - name: Install Appium
-        run: npm install -g appium
+      - name: Check Appium Doctor
+        run: appium-doctor
 
-      - name: Start Appium
-        run: appium &>/dev/null &
-
-      - name: Build with Gradle
+      - name: Build and Test with Gradle
         run: ./gradlew build
 
-      - name: Run Appium tests
-        run: ./gradlew test
+      - name: Run Appium Test
+        run: ./gradlew clean test --tests "co.com.project.automation.prestaApp.runners.Run"

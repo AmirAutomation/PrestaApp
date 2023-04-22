@@ -30,6 +30,6 @@ jobs:
       with:
         api-level: ${{ matrix.api-level }}
         target: ${{ matrix.target }}
-        arch: x64
+        arch: x86_64
         profile: Nexus 6
         script: ./gradlew :test --tests "co.com.project.automation.prestaApp.runners.Run"

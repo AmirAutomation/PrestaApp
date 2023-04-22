@@ -17,6 +17,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 19
+        distribution: 'zulu'
     - uses: actions/setup-node@v2
       with:
        node-version: '12'
@@ -28,7 +29,9 @@ jobs:
     - name: Run Test
       uses: reactivecircus/android-emulator-runner@v2.27.0
       with:
+        emulator-boot-timeout: 10000
         api-level: ${{ matrix.api-level }}
+        emulator-build: 9751036
         target: ${{ matrix.target }}
         arch: x86_64
         profile: Nexus 6

@@ -23,7 +23,7 @@ jobs:
         run: |
           npm install -g appium
           appium -v
-          appium driver install uiautomator2
+          npm install appium-uiautomator2-driver
           appium &>/dev/null &
       - name: Run Test
         run: ./gradlew build

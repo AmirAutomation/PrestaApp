@@ -17,13 +17,13 @@ jobs:
           
       - name: Checkout
         uses: actions/checkout@v3
-        
-        
+      
+      - name: Driver
+        run: npm install appium-uiautomator2-driver
       - name: Setup Appium
         run: |
           npm install -g appium
           appium -v
-          npm install appium-uiautomator2-driver
           appium &>/dev/null &
       - name: Run Test
         run: ./gradlew build

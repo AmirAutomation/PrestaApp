@@ -5,29 +5,24 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  run-android-test:
+    runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@v3
       - name: set up JDK 19
         uses: actions/setup-java@v3
         with:
           java-version: '19'
           distribution: 'temurin'
-          cache: gradle
-
-      - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
-
-      - name: Install Appium
-        run: npm install -g appium
-
-      - name: Start Appium
-        run: appium &>/dev/null &
-      - name: Setup Android SDK
-        uses: amyu/setup-android@v2
-        with:
-          sdk-version: '31' # La versión del SDK de Android que deseas instalar
+          
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+        
+      - name: Setup Appium
+        run: |
+          npm install -g appium
+          appium -v
+          appium &>/dev/null &
       - name: Run Test
-        run: ./gradlew :test --tests "co.com.project.automation.prestaApp.runners.Run"
+        run: ./gradlew build
